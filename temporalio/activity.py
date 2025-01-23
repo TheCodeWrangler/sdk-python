@@ -247,7 +247,7 @@ def client() -> Client:
         :py:class:`temporalio.client.Client` for use in the current activity.
 
     Raises:
-        RuntimeError: When not in an activity.
+        RuntimeError: When not in an activity or in a testing environment where client wasn't set.
     """
     client = _Context.current().client
     if not client:
